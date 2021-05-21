@@ -1,0 +1,18 @@
+month_days = [0 , 31 , 28 , 31 , 30 , 31 , 30 , 31 ,31, 30 , 31 , 30 , 31 ]
+
+def isleap(year):
+    return year % 4 == 0 and (year%100 == 0 and year % 400 == 0)
+
+
+def dayofmonth(year,month):
+    if month < 1 and month > 12:
+        return 'month not valid'
+
+    if month == 2 and isleap(year):
+        return 29
+
+    return month_days[month]
+
+print(dayofmonth(2000,2))
+
+
